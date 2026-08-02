@@ -11,7 +11,6 @@ const channels = [
   },
   {
     label: 'Currículo',
-    value: 'Baixar PDF',
     href: '/cv/majda-alvarenga-cv.pdf',
     hint: 'Experiência completa, formação e certificações.',
     download: true,
