@@ -41,17 +41,19 @@ export default function ProcessFlow() {
   return (
     <section className="timeline">
       <div className="timeline__steps">
-        {stages.map((stage, index) => (
-          <button
-            key={stage.label}
-            className={`timeline__step ${active === index ? 'active' : ''}`}
-            onMouseEnter={() => setActive(index)}
-            onClick={() => setActive(index)}
-          >
-            <span>{String(index + 1).padStart(2, '0')}</span>
-            <h4>{stage.label}</h4>
-          </button>
-        ))}
+        <div className="timeline__steps-track">
+          {stages.map((stage, index) => (
+            <button
+              key={stage.label}
+              className={`timeline__step ${active === index ? 'active' : ''}`}
+              onMouseEnter={() => setActive(index)}
+              onClick={() => setActive(index)}
+            >
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h4>{stage.label}</h4>
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="timeline__detail">

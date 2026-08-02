@@ -174,10 +174,53 @@ button:focus-visible {
   width: 100%;
 }
 
+.site-header__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  color: var(--ink);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
 @media (max-width: 640px) {
   .site-header__inner { height: 64px; }
-  .site-header__nav { gap: 18px; }
-  .site-header__link { font-size: 0.7rem; }
+
+  .site-header__toggle {
+    display: flex;
+  }
+
+  .site-header__nav {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--stone);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+
+  .site-header__nav.is-open {
+    max-height: 260px;
+  }
+
+  .site-header__link {
+    padding: 16px 20px;
+    font-size: 0.78rem;
+    border-bottom: 1px solid var(--linen);
+  }
+
+  .site-header__link::after {
+    display: none;
+  }
 }
 
 /* ==========================================================================
@@ -219,16 +262,29 @@ button:focus-visible {
   flex-direction: column;
   gap: 3rem;
   margin-top: 3rem;
+  min-width: 0;
 }
 
 .timeline__steps {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
   padding-top: 1rem;
+  padding-bottom: 1rem;
+  min-width: 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--stone) transparent;
 }
 
-.timeline__steps::before {
+.timeline__steps-track {
+  display: inline-flex;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+  min-width: 100%;
+}
+
+.timeline__steps-track::before {
   content: "";
   position: absolute;
   top: 28px;
@@ -250,6 +306,7 @@ button:focus-visible {
   border: none;
   cursor: pointer;
   width: 120px;
+  flex-shrink: 0;
   transition: .25s;
 }
 
@@ -314,14 +371,7 @@ button:focus-visible {
 }
 
 @media (max-width: 900px) {
-  .timeline__steps {
-    overflow-x: auto;
-    gap: 2rem;
-    justify-content: flex-start;
-    padding-bottom: 1rem;
-  }
-  .timeline__steps::before { width: 900px; }
-  .timeline__step { flex-shrink: 0; }
+  .timeline__step { width: 100px; }
 }
 
 /* ==========================================================================
@@ -554,7 +604,8 @@ button:focus-visible {
 
 @media (max-width: 900px) {
   .sobre__grid { grid-template-columns: 1fr; }
-  .sobre__portrait { order: -1; }
+  .sobre__portrait { order: -1; position: static; }
+  .sobre__portrait img { margin-top: 0; }
   .responsibilities__list { grid-template-columns: 1fr 1fr; }
 }
 
@@ -587,6 +638,8 @@ button:focus-visible {
   border: 1px solid var(--stone);
   border-radius: 8px;
   overflow: hidden;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .case-card__media img {
@@ -601,6 +654,7 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  min-width: 0;
 }
 
 .case-card__header {
@@ -635,10 +689,11 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-width: 0;
 }
 
 .case-card__title {
-  font-size: 1.7rem;
+  font-size: clamp(1.3rem, 4.5vw, 1.7rem);
 }
 
 .case-card__text {
@@ -666,9 +721,35 @@ button:focus-visible {
   padding: 5px 12px;
 }
 
+.casos__list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 5vw, 40px);
+}
+
+.case-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  align-self: flex-start;
+  padding: 12px 22px;
+  border-radius: 4px;
+  background: var(--terracotta);
+  color: var(--paper);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.case-card__link:hover {
+  background: var(--terracotta-deep);
+}
+
 @media (max-width: 780px) {
   .case-card { grid-template-columns: 1fr; }
   .case-card__media img { max-height: 260px; }
+  .case-card__content { padding: 28px 24px; }
 }
 
 /* ==========================================================================

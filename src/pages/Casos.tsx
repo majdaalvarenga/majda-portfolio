@@ -18,7 +18,8 @@ export default function Casos() {
         <h1 className="casos__title">Meus trabalhos</h1>
       </header>
 
-  <article className="case-card">
+      <div className="casos__list">
+        <article className="case-card">
   <div className="case-card__content">
     <button
       type="button"
@@ -65,9 +66,7 @@ export default function Casos() {
     )}
   </div>
 </article>
-<br /><br />
-
-      <article className="case-card">
+        <article className="case-card">
       <div className="case-card__content">
         <button
           type="button"
@@ -115,10 +114,8 @@ export default function Casos() {
       </div>
     </article>
 
-      <br /><br />
-      <article className="case-card">
-        
-        <div className="case-card__content">
+        <article className="case-card">
+          <div className="case-card__content">
           <span className="eyebrow">Repositório</span>
           <h2 className="case-card__title">Projetos e estudos no GitHub</h2>
           <p className="case-card__text">
@@ -138,15 +135,15 @@ export default function Casos() {
             href="https://github.com/majdaalvarenga"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary"
+            className="case-card__link"
           >
             Ver projetos no GitHub →
           </a>
-        </div>
-      </article>    
-      <br /><br />
-      <section className="process-section">
-        <br /><br />
+          </div>
+        </article>
+      </div>
+
+      <section className="process-section process-section--casos">
         <span className="eyebrow">Como penso na atuação de Product Owner</span>
         <h2 className="process-section__title">Timeline do Desenvolvimento de Produto</h2>
         <ProcessFlow />
