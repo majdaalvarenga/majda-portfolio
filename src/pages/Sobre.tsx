@@ -1,4 +1,5 @@
 const responsibilities = [
+  'Gerenciamento do produto',
   'Levantamento de requisitos',
   'Definição de funcionalidades',
   'Protótipos',
@@ -8,6 +9,8 @@ const responsibilities = [
   'Acompanhamento do desenvolvimento',
   'Homologação',
   'Feedback dos usuários',
+  'Entrevista de candidatos',
+  'Onboarding de novos membros',
 ]
 
 export default function Sobre() {
