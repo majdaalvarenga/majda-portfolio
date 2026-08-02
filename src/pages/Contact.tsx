@@ -45,7 +45,6 @@ export default function Contact() {
             key={channel.label}
           >
             <span className="eyebrow">{channel.label}</span>
-            <p className="contact-card__value">{channel.value}</p>
             <p className="contact-card__hint">{channel.hint}</p>
             <span className="contact-card__arrow" aria-hidden="true">→</span>
           </a>
