@@ -42,8 +42,7 @@ export default function Home() {
           <img src="/images/hero-illustration.svg" alt="Ilustração representando quadro kanban, protótipo e checklist de histórias de usuário" />
         </div>
       </section>
-        <br />
-        <br /><br />
+      
       <section className="container section-nav">
         <span className="eyebrow">Explore</span>
         <div className="section-nav__grid">
