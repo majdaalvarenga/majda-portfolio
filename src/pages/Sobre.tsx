@@ -31,7 +31,7 @@ export default function Sobre() {
           </p>
         </div>
         <div className="sobre__portrait">
-          <img src="/public/images/majda.jpeg" alt="Foto Májda" />
+          <img src="/images/majda.jpeg" alt="Foto Májda" />
         </div>
       </div>
 
